@@ -17,7 +17,7 @@ for n, video in enumerate(videos, start=1):
 selected_videos = questionary.checkbox('Select videos', choices=map(str, range(1, 10))).ask()
 if not selected_videos:
     exit()
-   
+
 link_list = [v['link'] for v in [videos[int(n)] for n in selected_videos]]
 best_tags = []
 for link in track(link_list, description="Loading tags"):
@@ -26,4 +26,7 @@ for link in track(link_list, description="Loading tags"):
 
 tags_formatted = ", ".join(list(set(best_tags)))
 console.print(f"[red][green]{len(best_tags)}[/] Tags gotten. Total [green]{len(tags_formatted)}[/] characters[/]")
-console.print(tags_formatted)
+print(tags_formatted)
+with open(f"{search_term}-{'-'.join(selected_videos)}.txt", "w") as f:
+    f.write(tags_formatted)
+    console.print(f"Tags saved to [green]{search_term}-{'-'.join(selected_videos)}.txt[/]")

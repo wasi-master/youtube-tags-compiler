@@ -28,7 +28,7 @@ while True:
     tags_formatted = ", ".join(list(set(best_tags)))
     console.print(f"[red][green]{len(best_tags)}[/] Tags gotten. Total [green]{len(tags_formatted)}[/] characters[/]")
     print(tags_formatted)
-    with open(f"{search_term}-{'-'.join(selected_videos)}.txt", "w") as f:
+    with open(f"{search_term}-{'-'.join(selected_videos)}.txt", "w", encoding="utf-8") as f:
         f.write(tags_formatted)
         console.print(f"Tags saved to [green]{search_term}-{'-'.join(selected_videos)}.txt[/]")
     do_again = questionary.confirm("Do you want to do it again?").ask()

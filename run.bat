@@ -1,0 +1,2 @@
+python tags.py
+pause

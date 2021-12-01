@@ -24,4 +24,6 @@ for link in track(link_list, description="Loading tags"):
     tags = videotags(link)
     best_tags += map(str.strip, filter(None, tags.split(",")))
 
-print(", ".join(list(set(best_tags))))
+tags_formatted = ", ".join(list(set(best_tags)))
+console.print(f"[red][green]{len(best_tags)}[/] Tags gotten. Total [green]{len(tags_formatted)}[/] characters[/]")
+console.print(tags_formatted)

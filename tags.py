@@ -15,7 +15,7 @@ while True:
         console.print(f"[yellow]{n}.[/][cyan]{video['title']}[/] by [green]{video['channel']['name']}")
         console.print(f"[red]{video['link']}[/]")
 
-    selected_videos = questionary.checkbox('Select videos', choices=map(str, range(1, 10))).ask()
+    selected_videos = questionary.checkbox('Select videos', choices=map(str, range(1, 11))).ask()
     if not selected_videos:
         exit()
 

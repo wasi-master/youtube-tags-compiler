@@ -22,6 +22,6 @@ link_list = [v['link'] for v in [videos[int(n)] for n in selected_videos]]
 best_tags = []
 for link in track(link_list, description="Loading tags"):
     tags = videotags(link)
-    best_tags += tags.split(",")
+    best_tags += filter(None, tags.split(","))
 
 print(", ".join(list(set(best_tags))))

@@ -1,0 +1,4 @@
+youtube-search-python
+YoutubeTags
+rich
+questionary

@@ -19,7 +19,7 @@ while True:
     if not selected_videos:
         exit()
 
-    link_list = [v['link'] for v in [videos[int(n)] for n in selected_videos]]
+    link_list = [v['link'] for v in [videos[int(n)-1] for n in selected_videos]]
     best_tags = []
     for link in track(link_list, description="Loading tags"):
         tags = videotags(link)
